@@ -1,14 +1,14 @@
 // from data.js
+// Variables
 var tableData = data;
-var tbody = d3.select('tbody');
 var btn = d3.select('button');
+var tbody = d3.select('tbody');
 
 renderTable(tableData);
 
 btn.on("click", handleClick);
 
 function handleClick() {
-    // console.log('Hello');
     d3.event.preventDefault();
     var filteredData = tableData;
     var input = d3.select('#datetime');
