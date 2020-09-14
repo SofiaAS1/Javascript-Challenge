@@ -1,8 +1,9 @@
 // from data.js
 // Variables
 var tableData = data;
-var btn = d3.select('button');
+var btn = d3.select('#filter-btn');
 var tbody = d3.select('tbody');
+var clear = d3.select('#clear-btn');
 
 renderTable(tableData);
 
@@ -12,7 +13,7 @@ function handleClick() {
     d3.event.preventDefault();
     var filteredData = tableData;
     var input1 = d3.select('#asdf').property("value");
-    var input2 = d3.select('#info2')
+    var input2 = d3.select('#info2');
     if (input1 === "Date") {
         var inputval = input2.property("value");
         filteredData = tableData.filter(row => row.datetime === inputval);
@@ -33,7 +34,6 @@ function handleClick() {
         var inputval = input2.property("value");
         filteredData = tableData.filter(row => row.shape === inputval);
         tbody.html("");}
-    else {console.log ("YOU LOSE, CHARLIE, YOU LOSE!!!")}
     console.log(filteredData);
     renderTable(filteredData);
 }
@@ -46,5 +46,6 @@ function renderTable(data) {
         })
     });
 };
+
 
  
